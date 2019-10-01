@@ -13,7 +13,7 @@ class Main(object):
 
     @staticmethod
     def plot_investment(filepath, save="", show=False):
-        # TODO: implement plot_investment method
+        # TODO: 
         raise NotImplementedError
 
 if __name__ == "__main__":

@@ -60,11 +60,3 @@ class InvestmentProject (object):
         """
         # TODO: implement equivalent_annuity methdo
         raise NotImplementedError
-
-    def describe(self):
-        return {
-            "irr": self.internal_return_rate,
-            "hurdle-rate": self.hurdle_rate,
-            "net-present-value": self.net_present_value(interest_rate=None),
-            "equivalent-annuity": self.equivalent_annuity(interest_rate=None)
-        }
