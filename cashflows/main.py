@@ -3,7 +3,6 @@ import json
 
 from util import InvestmentProject
 
-
 class Main(object):
     
     @staticmethod

@@ -2,22 +2,19 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+class Flow(object):
+#Clase para Cashflow
 
-class Cashflow(object):
-    """Cashflow
-    Create a cashflow-class definition.
-    
-    Attributes: 
-        * amount - monetary amount at time t.
-        * t - integer representing time. 
-        
-    Methods:
-        * present_value(self, interest_rate) - returns the present value of the cashfow given a interest-rate.
-    """
+    def __init__(self, **kwargs):
+        self.amount = kwargs['amount']
+        self.t = kwargs['t']
 
+    def present_value(self, interest_rate):
+        pv = self.amount / ((1 + interest_rate) ** self.t)
+        return pv
 
-class InvestmentProject(object):
-    RISK_FREE_RATE = 0.08
+class InvestmentProject (object):
+#Clase para investment project
 
     def __init__(self, cashflows, hurdle_rate=RISK_FREE_RATE):
         cashflows_positions = {str(flow.t): flow for flow in cashflows}
