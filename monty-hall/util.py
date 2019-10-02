@@ -118,8 +118,9 @@ class Guest(object):
         :param options: a dictionary containing door_name:door_obj
         :return: the key of the selected option (i.e., door_name)
         """
-        # TODO: implement 'change' strategy
-        raise NotImplementedError
+        options.pop(self.memory[-1])
+        sel_opt_key = self._choose_strategy_random(options=options)
+        return sel_opt_key
 
     def choose(self, options, strategy):
         if strategy == Guest.Strategy.RANDOM:
